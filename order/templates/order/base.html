@@ -1,0 +1,319 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {%if title%}
+  <title>{{title}}</title>
+  {%else%}
+  <title>BigTrouble</title>
+  {%endif%}
+
+  <!-- Vendor Stylesheets -->
+  <link rel="stylesheet" href=" {% static 'order/assets/css/plugins/bootstrap.min.css' %}">
+  <link rel="stylesheet" href=" {% static 'order/assets/css/plugins/animate.min.css' %}">
+  <link rel="stylesheet" href=" {% static 'order/assets/css/plugins/magnific-popup.css' %}">
+  <link rel="stylesheet" href=" {% static 'order/assets/css/plugins/slick.css' %}">
+  <link rel="stylesheet" href=" {% static 'order/assets/css/plugins/slick-theme.css' %}">
+  <!-- Icon Fonts -->
+  <link rel="stylesheet" href=" {% static 'order/assets/fonts/flaticon/flaticon.css' %}">
+  <link rel="stylesheet" href=" {% static 'order/assets/fonts/font-awesome/css/all.min.css' %}">
+
+  <!-- Slices Style sheet -->
+  <link rel="stylesheet" href=" {% static 'order/assets/css/style.css' %}">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'order/favicon.ico'%}">
+  <style>
+    .alert {
+      padding: 5px;
+      background-color: #ffffff;
+      color: white;
+      border-radius: 70px
+    }
+
+    .closebtn {
+      margin-left: 15px;
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+  {% if messages %}
+  {% for message in messages %}
+  {% if message.tags %}
+  <!-- <script>alert("{{ message }}")</script>  -->
+  <div class="alert">
+    <span onclick="this.parentElement.style.display='none';">&times;<a href="" class="btn-custom">{{message}}</a></span>
+
+  </div>
+  {% endif %}
+  {% endfor %}
+
+  {% endif %}
+
+  <!-- Preloader Start -->
+  <div class="ct-preloader">
+    <div class="ct-preloader-inner">
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <!-- Preloader End -->
+
+
+  {% if user.is_authenticated  %}
+  <!-- Cart Sidebar Start -->
+  {% if allorders == 1  %}
+  {%else%}
+  <div class="cart-sidebar-wrapper">
+    <aside class="cart-sidebar">
+      <div class="cart-sidebar-header">
+        <h3>Recent Orders</h3>
+        <div class="close-btn cart-trigger close-dark">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="cart-sidebar-body">
+        <div class="cart-sidebar-scroll">
+          {% for order in orders1 %}
+          <div class="cart-sidebar-item">
+            <div class="media">
+              <a href=""><img src=" {{order.pizza.pizza_image.url}}" alt="product"></a>
+              <div class="media-body">
+                <h5> <a href="" title="{{order.pizza.pizza_name}}">{{order.pizza.pizza_name}}</a> </h5>
+                <span>{{order.quantity}}x {{order.pizza.price}}Rs</span>
+              </div>
+            </div>
+            <div class="cart-sidebar-item-meta">
+              {%for top in order.extra.all%}
+              <span>{{top.name}}</span>
+              {%endfor%}
+            </div>
+            <div class="cart-sidebar-price">
+              {{order.order_price}}Rs
+            </div>
+
+            {% if order.get_time_diff %}
+            <div class="close-btn"><a href="{% url 'order_update' order.id %}">
+                Edit</a>
+            </div>
+            
+            
+          </div>
+          <span>Order can be updated within {{order.get_remaining_time}} minutes</spanp>
+          
+          
+          {%else%}
+          <div class="close-btn">
+          </div>
+        </div>
+        {%endif%}
+        {% endfor %}
+
+
+
+
+      </div>
+  </div>
+  <div class="cart-sidebar-footer">
+
+    <a href="{%url 'all-orders'%}" class="btn-custom">Order History</a>
+  </div>
+  </aside>
+  <div class="cart-sidebar-overlay cart-trigger">
+  </div>
+  </div>
+  <!-- Cart Sidebar End -->
+  {%endif%}
+  {%else%}
+  {%endif%}
+  <!-- Aside (Mobile Navigation) -->
+  <aside class="main-aside">
+    <a class="navbar-brand" href="{% url 'home' %}"> <img src=" {% static 'order/assets/img/logo.png' %}" alt="logo">
+    </a>
+
+    <div class="aside-scroll">
+      <ul>
+        <li class="menu-item ">
+          <a href="{% url 'home'%}">Menu</a>
+
+        </li>
+
+
+
+
+        {% if user.is_authenticated  %}
+        <li class="menu-item ">
+          <a href="{%url 'all-orders'%}">Orders</a>
+
+        </li>
+        <li class="menu-item">
+          <a href="{% url 'logout' %}">Logout</a>
+        </li>
+        {%else%}
+        <li class="menu-item">
+          <a href="{% url 'signup' %}">Signup</a>
+        </li>
+        <li class="menu-item">
+          <a href="{% url 'login' %}?next={{request.path}}">Login</a>
+        </li>
+        {%endif%}
+
+
+      </ul>
+
+    </div>
+
+  </aside>
+  <div class="aside-overlay aside-trigger"></div>
+  {% url 'login' as login_url %}
+  {% url 'signup' as signup_url %}
+
+  {% if request.path == login_url  or request.path == signup_url %}
+  <header class="main-header header-1"></header>
+  {%else%}
+
+  <!-- Header Start -->
+  <header class="main-header header-1 header-absolute header-light">
+
+    {%endif%}
+    <!-- navbar -->
+    <!-- navbar -->
+
+    <div class="container">
+      <nav class="navbar">
+        <!-- Logo -->
+        <a class="navbar-brand" href="{% url 'home' %}"> <img src=" {% static 'order/assets/img/logo-light.png' %}"
+            alt="logo"> </a>
+        <!-- Menu -->
+        <ul class="navbar-nav">
+          <li class="menu-item menu-item-has-children">
+            <a href="{%url 'home'%}">Menu</a>
+
+          </li>
+
+
+
+          {% if user.is_authenticated  %}
+          <li class="menu-item menu-item-has-children">
+            <a href="{%url 'all-orders'%}">Orders</a>
+
+          </li>
+          <li class="menu-item">
+            <a href="{% url 'logout' %}">Logout</a>
+          </li>
+          {%else%}
+          <li class="menu-item">
+            <a href="{% url 'login' %}?next={{request.path}}">Login</a>
+          </li>
+          {%endif%}
+        </ul>
+
+        <div class="header-controls">
+          {% if user.is_authenticated  %}
+          {% if allorders == 1  %}
+          {%else%}
+          <ul class="header-controls-inner">
+            <li class="cart-dropdown-wrapper cart-trigger">
+
+              <i class="flaticon-shopping-bag"></i>
+            </li>
+
+          </ul>
+          {%endif%}
+          {%endif%}
+          <!-- Toggler -->
+          <div class="aside-toggler aside-trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+      </nav>
+    </div>
+    <!-- navbar end -->
+  </header>
+  <!-- Header End -->
+  {% url 'login' as login_url %}
+  {% url 'signup' as signup_url %}
+
+  {% if request.path == login_url  or request.path == signup_url %}
+  <!-- Subheader Start -->
+  {%else%}
+
+
+
+
+  <div class="subheader dark-overlay dark-overlay-2"
+    style="background-image: url({% static 'order/assets/img/subheader.jpg' %})">
+    <div class="container">
+      <div class="subheader-inner">
+        {%if heading%}
+        <h1>{{heading}}</h1>
+        {%else%}
+        <h1>BigTrouble<br> pizza</h1>
+        {%endif%}
+
+      </div>
+
+    </div>
+  </div>
+  <!-- Subheader End -->
+  {%endif%}
+
+
+  {%block content%}{%endblock%}
+
+  <!-- Footer Start -->
+  <footer class="ct-footer footer-dark">
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="container">
+        <ul>
+        </ul>
+        <div class="footer-copyright">
+          <p> Copyright &copy; 2020 <a href="#">BigToublePizza</a> Only for project </p>
+          <a href="#" class="back-to-top">Back to top <i class="fas fa-chevron-up"></i> </a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- Footer End -->
+
+  <!-- Vendor Scripts -->
+  <script src=" {% static 'order/assets/js/plugins/jquery-3.4.1.min.js' %}"></script>
+  <script src=" {% static 'order/assets/js/plugins/popper.min.js' %}"></script>
+  <script src=" {% static 'order/assets/js/plugins/waypoint.js' %}"></script>
+  <script src=" {% static 'order/assets/js/plugins/bootstrap.min.js' %}"></script>
+  <script src=" {% static 'order/assets/js/plugins/jquery.magnific-popup.min.js' %}"></script>
+  <script src=" {% static 'order/assets/js/plugins/jquery.slimScroll.min.js' %}"></script>
+  <script src=" {% static 'order/assets/js/plugins/imagesloaded.min.js' %}"></script>
+  <script src=" {% static 'order/assets/js/plugins/jquery.steps.min.js' %}"></script>
+  <script src=" {% static 'order/assets/js/plugins/jquery.countdown.min.js' %}"></script>
+  <script src=" {% static 'order/assets/js/plugins/isotope.pkgd.min.js' %}"></script>
+  <script src=" {% static 'order/assets/js/plugins/slick.min.js' %}"></script>
+
+  <!-- Slices Scripts -->
+  <script src=" {% static 'order/assets/js/main.js' %}"></script>
+
+</body>
+
+
+
+
+</html>

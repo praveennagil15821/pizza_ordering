@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+
+<!-- Mirrored from androthemes.com/themes/html/slices/menu-item-v2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Apr 2020 05:07:02 GMT -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slices - Pizzeria HTML Template</title>
+
+  <!-- Vendor Stylesheets -->
+  <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/plugins/slick.css">
+  <link rel="stylesheet" href="assets/css/plugins/slick-theme.css">
+  <!-- Icon Fonts -->
+  <link rel="stylesheet" href="assets/fonts/flaticon/flaticon.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome/css/all.min.css">
+
+  <!-- Slices Style sheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+
+</head>
+
+<body>
+
+  <!-- Preloader Start -->
+  <div class="ct-preloader">
+    <div class="ct-preloader-inner">
+      <div class="lds-ripple"><div></div><div></div></div>
+    </div>
+  </div>
+  <!-- Preloader End -->
+
+  <!-- Customize Modal Start -->
+  <div class="modal fade" id="customizeModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-bg" style="background-image: url('assets/img/blog/11.jpg')">
+
+          <button type="button" class="close-btn" data-dismiss="modal" aria-label="Close">
+            <span></span>
+            <span></span>
+          </button>
+
+        </div>
+        <div class="modal-body">
+
+          <div class="customize-meta">
+            <h4 class="customize-title">Pepperoni Pizza <span class="custom-primary">13.99$</span> </h4>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+            </p>
+          </div>
+
+          <div class="customize-variations">
+
+            <div class="customize-size-wrapper">
+              <h5>Size: </h5>
+              <div class="customize-size active">
+                11"
+              </div>
+              <div class="customize-size">
+                16"
+              </div>
+              <div class="customize-size">
+                21"
+              </div>
+            </div>
+
+            <div class="row">
+
+              <!-- Variation Start -->
+              <div class="col-lg-4 col-12">
+                <div class="customize-variation-wrapper">
+                  <i class="flaticon-bread-roll"></i>
+                  <h5>Dough</h5>
+                  <div class="customize-variation-item" data-price="0.00">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" checked id="regularDough" name="dough" class="custom-control-input">
+                      <label class="custom-control-label" for="regularDough">Regular</label>
+                    </div>
+                    <span>+0.00$</span>
+                  </div>
+                  <div class="customize-variation-item" data-price="2.00">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" id="thinDough" name="dough" class="custom-control-input">
+                      <label class="custom-control-label" for="thinDough">Hand Flipped</label>
+                    </div>
+                    <span>+2.00$</span>
+                  </div>
+                  <div class="customize-variation-item" data-price="4.00">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" id="multiGrainDough" name="dough" class="custom-control-input">
+                      <label class="custom-control-label" for="multiGrainDough">Multi Grain</label>
+                    </div>
+                    <span>+4.00$</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Variation End -->
+
+              <!-- Variation Start -->
+              <div class="col-lg-4 col-12">
+                <div class="customize-variation-wrapper">
+                  <i class="flaticon-pizza-slice"></i>
+                  <h5>Crust</h5>
+                  <div class="customize-variation-item" data-price="4.00">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" id="cheeseCrust" name="crust" class="custom-control-input">
+                      <label class="custom-control-label" for="cheeseCrust">Cheese</label>
+                    </div>
+                    <span>+4.00$</span>
+                  </div>
+                  <div class="customize-variation-item" data-price="3.25">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" id="butterCrust" name="crust" class="custom-control-input">
+                      <label class="custom-control-label" for="butterCrust">Butter</label>
+                    </div>
+                    <span>+3.25$</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Variation End -->
+
+              <!-- Variation Start -->
+              <div class="col-lg-4 col-12">
+                <div class="customize-variation-wrapper">
+                  <i class="flaticon-pizza-and-cutted-slice"></i>
+                  <h5>Add</h5>
+                  <div class="customize-variation-item" data-price="2.00">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="addChicken">
+                      <label class="custom-control-label" for="addChicken">Chicken</label>
+                    </div>
+                    <span>+2.00$</span>
+                  </div>
+                  <div class="customize-variation-item" data-price="1.20">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="addFourCheese">
+                      <label class="custom-control-label" for="addFourCheese">Four Cheese</label>
+                    </div>
+                    <span>+1.20$</span>
+                  </div>
+                  <div class="customize-variation-item" data-price="0.75">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="addFreshMushroom">
+                      <label class="custom-control-label" for="addFreshMushroom">Fresh Mushroom</label>
+                    </div>
+                    <span>+0.75$</span>
+                  </div>
+                  <div class="customize-variation-item" data-price="0.25">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="addBellPepper">
+                      <label class="custom-control-label" for="addBellPepper">Bell Peppers</label>
+                    </div>
+                    <span>+0.25$</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Variation End -->
+
+            </div>
+          </div>
+
+          <div class="customize-controls">
+            <div class="qty">
+              <span class="qty-subtract"><i class="fas fa-minus"></i></span>
+              <input type="text" name="qty" value="1">
+              <span class="qty-add"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="customize-total" data-price="13.99">
+              <h5>Total Price: <span class="final-price custom-primary">13.99 <span>$</span> </span> </h5>
+            </div>
+          </div>
+
+          <button type="button" class="btn-custom btn-block">Order Now</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Customize Modal End -->
+
+  <!-- Cart Sidebar Start -->
+  <div class="cart-sidebar-wrapper">
+    <aside class="cart-sidebar">
+      <div class="cart-sidebar-header">
+        <h3>Your Cart</h3>
+        <div class="close-btn cart-trigger close-dark">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="cart-sidebar-body">
+        <div class="cart-sidebar-scroll">
+          <div class="cart-sidebar-item">
+            <div class="media">
+              <a href="menu-item-v1.html"><img src="assets/img/prods-sm/1.png" alt="product"></a>
+              <div class="media-body">
+                <h5> <a href="menu-item-v1.html" title="Pepperoni">Pepperoni</a> </h5>
+                <span>4x 9.99$</span>
+              </div>
+            </div>
+            <div class="cart-sidebar-item-meta">
+              <span>14 Inches</span>
+              <span>Extra Cheese</span>
+              <span>Cheese Crust</span>
+            </div>
+            <div class="cart-sidebar-price">
+              36.99$
+            </div>
+            <div class="close-btn">
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="cart-sidebar-item">
+            <div class="media">
+              <a href="menu-item-v1.html"><img src="assets/img/prods-sm/2.png" alt="product"></a>
+              <div class="media-body">
+                <h5> <a href="menu-item-v1.html" title="Vegetarian">Vegetarian</a> </h5>
+                <span>2x 5.99$</span>
+              </div>
+            </div>
+            <div class="cart-sidebar-item-meta">
+              <span>14 Inches</span>
+            </div>
+            <div class="cart-sidebar-price">
+              12.99$
+            </div>
+            <div class="close-btn">
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="cart-sidebar-item">
+            <div class="media">
+              <a href="menu-item-v1.html"><img src="assets/img/prods-sm/3.png" alt="product"></a>
+              <div class="media-body">
+                <h5> <a href="menu-item-v1.html" title="Italian Jalapeno Special">Italian Jalapeno Special</a> </h5>
+                <span>1x 12.99$</span>
+              </div>
+            </div>
+            <div class="cart-sidebar-item-meta">
+              <span>14 Inches</span>
+              <span>Extra Cheese</span>
+              <span>Cheese Crust</span>
+            </div>
+            <div class="cart-sidebar-price">
+              12.99$
+            </div>
+            <div class="close-btn">
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="cart-sidebar-item">
+            <div class="media">
+              <a href="menu-item-v1.html"><img src="assets/img/prods-sm/4.png" alt="product"></a>
+              <div class="media-body">
+                <h5> <a href="menu-item-v1.html" title="Barbeque Chicken">Barbeque Chicken</a> </h5>
+                <span>4x 9.99$</span>
+              </div>
+            </div>
+            <div class="cart-sidebar-item-meta">
+              <span>12 Inches</span>
+              <span>Extra Cheese</span>
+              <span>Cheese Crust</span>
+              <span>Added Chicken</span>
+            </div>
+            <div class="cart-sidebar-price">
+              36.99$
+            </div>
+            <div class="close-btn">
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="cart-sidebar-item">
+            <div class="media">
+              <a href="menu-item-v1.html"><img src="assets/img/prods-sm/5.png" alt="product"></a>
+              <div class="media-body">
+                <h5> <a href="menu-item-v1.html" title="Four Cheese">Four Cheese</a> </h5>
+                <span>2x 5.99$</span>
+              </div>
+            </div>
+            <div class="cart-sidebar-item-meta">
+              <span>12 Inches</span>
+              <span>Added Chicken</span>
+            </div>
+            <div class="cart-sidebar-price">
+              12.99$
+            </div>
+            <div class="close-btn">
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="cart-sidebar-item">
+            <div class="media">
+              <a href="menu-item-v1.html"><img src="assets/img/prods-sm/6.png" alt="product"></a>
+              <div class="media-body">
+                <h5> <a href="menu-item-v1.html" title="Swiss Mushroom">Swiss Mushroom</a> </h5>
+                <span>1x 12.99$</span>
+              </div>
+            </div>
+            <div class="cart-sidebar-item-meta">
+              <span>12 Inches</span>
+              <span>Extra Cheese</span>
+              <span>Cheese Crust</span>
+              <span>Added Chicken</span>
+            </div>
+            <div class="cart-sidebar-price">
+              12.99$
+            </div>
+            <div class="close-btn">
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cart-sidebar-footer">
+        <h4>Total: <span>299.99$</span> </h4>
+        <a href="#" class="btn-custom">Checkout</a>
+      </div>
+    </aside>
+    <div class="cart-sidebar-overlay cart-trigger">
+    </div>
+  </div>
+  <!-- Cart Sidebar End -->
+
+  <!-- Search Form Start-->
+  <div class="search-form-wrapper">
+    <div class="search-trigger close-btn">
+      <span></span>
+      <span></span>
+    </div>
+    <form class="search-form" method="post">
+      <input type="text" placeholder="Search..." value="">
+      <button type="submit" class="search-btn">
+        <i class="flaticon-magnifying-glass"></i>
+      </button>
+    </form>
+  </div>
+  <!-- Search Form End-->
+
+  <!-- Aside (Mobile Navigation) -->
+  <aside class="main-aside">
+    <a class="navbar-brand" href="index.html"> <img src="assets/img/logo.png" alt="logo"> </a>
+
+    <div class="aside-scroll">
+      <ul>
+        <li class="menu-item ">
+          <a href="#">Home Pages</a>
+          
+        </li>
+        <li class="menu-item ">
+          <a href="#">Blog</a>
+          
+        </li>
+        <li class="menu-item ">
+          <a href="#">Pages</a>
+         
+        </li>
+        <li class="menu-item ">
+          <a href="#">Menu</a>
+          
+        </li>
+        <li class="menu-item">
+          <a href="locations.html">Locations</a>
+        </li>
+        <li class="menu-item">
+          <a href="contact-us.html">Contact Us</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </aside
+  <div class="aside-overlay aside-trigger"></div>
+
+  <!-- Header Start -->
+  <header class="main-header header-1 header-absolute header-light">
+
+    <!-- navbar -->
+
+    <div class="container">
+     <nav class="navbar">
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html"> <img src="assets/img/logo-light.png" alt="logo"> </a>
+        <!-- Menu -->
+        <ul class="navbar-nav">
+          <li class="menu-item menu-item-has-children">
+            <a href="#">Home Pages</a>
+            
+          </li>
+          <li class="menu-item menu-item-has-children">
+            <a href="#">Blog</a>
+            
+          </li>
+          <li class="menu-item menu-item-has-children">
+            <a href="#">Pages</a>
+            
+          </li>
+          <li class="menu-item menu-item-has-children mega-menu-wrapper">
+            <a href="#">Menu</a>
+            
+          </li>
+          <li class="menu-item">
+            <a href="locations.html">Locations</a>
+          </li>
+          <li class="menu-item">
+            <a href="contact-us.html">Contact Us</a>
+          </li>
+        </ul>
+
+        <div class="header-controls">
+          <ul class="header-controls-inner">
+            <li class="cart-dropdown-wrapper cart-trigger">
+              
+              <i class="flaticon-shopping-bag"></i>
+            </li>
+            
+          </ul>
+          <!-- Toggler -->
+          <div class="aside-toggler aside-trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+      </nav>
+    </div>
+    <!-- navbar end -->
+  </header>
+  <!-- Header End -->
+
+  <!-- Subheader Start -->
+  <div class="subheader dark-overlay dark-overlay-2" style="background-image: url('assets/img/subheader.jpg')">
+    <div class="container">
+      <div class="subheader-inner">
+        <h1>Menu Item v2</h1>  
+      </div>
+
+    </div>
+  </div>
+  <!-- Subheader End -->
+ <div class="section product-single">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-5">
+
+          <!-- Main Thumb -->
+          <div class="product-thumb">
+            <img src="assets/img/prods/2.png" alt="pizza">
+          </div>
+          <!-- /Main Thumb -->
+
+        </div>
+        <div class="col-md-7">
+          <div class="product-content">
+
+            <!-- Product Title -->
+            <h2 class="title">Barbeque Chicken</h2>
+            <!-- /Product Title -->
+
+            <div class="favorite">
+              <i class="far fa-heart"></i>
+            </div>
+
+            
+
+            <!-- Price -->
+            <div class="price-wrapper">
+              <p class="product-price">14.99$</p>
+            </div>
+            <!-- /Price -->
+
+            <!-- Product Short Description -->
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+            <!-- /Product Short Description -->
+
+            <!-- Variations -->
+            <div class="customize-variations">
+
+             
+
+              <div class="accordion with-gap" id="variationsExample">
+
+                <div class="card">
+                  <div class="card-header" data-toggle="collapse" role="button" data-target="#doughAccordion" aria-expanded="true" aria-controls="doughAccordion">
+                    <i class="flaticon-bread-roll"></i> Mode of payment
+                  </div>
+                  <div id="doughAccordion" class="collapse show" data-parent="#variationsExample">
+                    <div class="card-body">
+                      <div class="customize-variation-wrapper">
+                        <div class="customize-variation-item" data-price="0.00">
+                          <div class="custom-control custom-radio">
+                            <input type="radio" checked id="cod" name="dough1" class="custom-control-input">
+                            <label class="custom-control-label" for="cod">Cash on Delivery</label>
+                          </div>
+                          <span>+0.00$</span>
+                        </div>
+                        
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+             
+
+                
+
+
+                <div class="card">
+                  <div class="card-header" data-toggle="collapse" role="button" data-target="#addAccordion" aria-expanded="false" aria-controls="addAccordion">
+                    <i class="flaticon-pizza-and-cutted-slice"></i> Address edit
+                  </div>
+
+                  <div id="addAccordion" class="collapse" data-parent="#variationsExample">
+                    
+                      <form method="post">
+        <div class="row">
+          <div class="col-xl-7">
+
+            <!-- Login -->
+            <div class="ct-notice">
+              <p>Are you a returning customer? <a href="#">Click here to login</a> </p>
+            </div>
+            <div class="ct-notice-content">
+              <div class="row">
+                <div class="col-xl-6 form-group">
+                  <label>Email Address</label>
+                  <input type="text" class="form-control" name="login-email" placeholder="Email Address" value="">
+                </div>
+                <div class="col-xl-6 form-group">
+                  <label>Password</label>
+                  <input type="password" class="form-control" name="login-pass" placeholder="Password" value="">
+                </div>
+                <div class="col-12 form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="rememberMe">
+                    <label class="custom-control-label" for="rememberMe">Remember Me</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn-custom shadow-none btn-sm" name="button">Login</button>
+                </div>
+              </div>
+            </div>
+         
+            
+
+            <!-- Buyer Info -->
+            <h4>Billing Details</h4>
+            <div class="row">
+              <div class="form-group col-xl-6">
+                <label>First Name <span class="text-danger">*</span></label>
+                <input type="text" placeholder="First Name" name="fname" class="form-control" value="" required="">
+              </div>
+              <div class="form-group col-xl-6">
+                <label>Last Name <span class="text-danger">*</span></label>
+                <input type="text" placeholder="Last Name" name="lname" class="form-control" value="" required="">
+              </div>
+              
+              <div class="form-group col-xl-12">
+                <label>Country <span class="text-danger">*</span></label>
+                <select class="form-control">
+                  <option value="">Select a Country</option>
+                  <option value="Afghanistan">Afghanistan</option>
+                  <option value="Åland Islands">Åland Islands</option>
+                  <option value="Albania">Albania</option>
+                  <option value="Algeria">Algeria</option>
+                  <option value="American Samoa">American Samoa</option>
+                  <option value="Andorra">Andorra</option>
+                  <option value="Angola">Angola</option>
+                  <option value="Anguilla">Anguilla</option>
+                  <option value="Antarctica">Antarctica</option>
+                  <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                  <option value="Argentina">Argentina</option>
+                  <option value="Armenia">Armenia</option>
+                  <option value="Aruba">Aruba</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Austria">Austria</option>
+                  <option value="Azerbaijan">Azerbaijan</option>
+                  
+                  
+                  
+                  
+                </select>
+              </div>
+              <div class="form-group col-xl-6">
+                <label>Street Address 1 <span class="text-danger">*</span></label>
+                <input type="text" placeholder="Street Address One" name="addr-1" class="form-control" value="" required="">
+              </div>
+              <div class="form-group col-xl-6">
+                <label>Street Address 2</label>
+                <input type="text" placeholder="Street Address Two (Optional)" name="addr-1" class="form-control" value="">
+              </div>
+              <div class="form-group col-xl-12">
+                <label>Town / City <span class="text-danger">*</span></label>
+                <input type="text" placeholder="Town/City" name="town" class="form-control" value="" required="">
+              </div>
+              <div class="form-group col-xl-6">
+                <label>Phone Number <span class="text-danger">*</span></label>
+                <input type="text" placeholder="Phone Number" name="phone" class="form-control" value="" required="">
+              </div>
+              <div class="form-group col-xl-6">
+                <label>Email Address <span class="text-danger">*</span></label>
+                <input type="email" placeholder="Email Address" name="email" class="form-control" value="" required="">
+              </div>
+              <div class="form-group col-xl-12 mb-0">
+                <label>Order Notes</label>
+                <textarea name="name" rows="5" class="form-control" placeholder="Order Notes (Optional)"></textarea>
+              </div>
+            </div>
+
+            <!-- /Buyer Info -->
+
+          </div>
+          <div class="col-xl-5 checkout-billing">
+            <!-- Order Details Start -->
+            <table class="ct-responsive-table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Qunantity</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-title="Product">
+                    <div class="cart-product-wrapper">
+                      <div class="cart-product-body">
+                        <h6> <a href="#">Pepperoni</a> </h6>
+                        <p>21 Inch</p>
+                        <p>Extra Cheese</p>
+                        <p>Extra Pepperoni</p>
+                        <p>Cheese Crust</p>
+                        <p>Added Bacon</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td data-title="Quantity">x1</td>
+                  <td data-title="Total"> <strong>23.99$</strong> </td>
+                </tr>
+                <tr>
+                  <td data-title="Product">
+                    <div class="cart-product-wrapper">
+                      <div class="cart-product-body">
+                        <h6> <a href="#">Vegetarian</a> </h6>
+                        <p>14 Inch</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td data-title="Quantity">x1</td>
+                  <td data-title="Total"> <strong>9.99$</strong> </td>
+                </tr>
+                <tr>
+                  <td data-title="Product">
+                    <div class="cart-product-wrapper">
+                      <div class="cart-product-body">
+                        <h6> <a href="#">Four Cheese</a> </h6>
+                        <p>21 Inch</p>
+                        <p>Added Cheese</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td data-title="Quantity">x2</td>
+                  <td data-title="Total"> <strong>13.99$</strong> </td>
+                </tr>
+                <tr class="total">
+                  <td>
+                    <h6 class="mb-0">Grand Total</h6>
+                  </td>
+                  <td></td>
+                  <td> <strong>56.99$</strong> </td>
+                </tr>
+              </tbody>
+            </table>
+
+          
+            <button type="submit" class="btn-custom primary btn-block">Place Order</button>
+
+            <!-- Order Details End -->
+
+          </div>
+        </div>
+      </form>
+
+
+                  </div>
+                </div>
+
+                
+
+              </div>
+
+            </div>
+            <!-- /Variations -->
+
+            <!-- Add To Cart Form -->
+            <form class="atc-form" method="post">
+              <div class="form-group">
+                <label>Quantity</label>
+                <div class="qty">
+                  <span class="qty-subtract"><i class="fas fa-minus"></i></span>
+                  <input type="text" name="qty" value="1">
+                  <span class="qty-add"><i class="fas fa-plus"></i></span>
+                </div>
+              </div>
+              <button type="submit" name="button" class="btn-custom secondary"> Order <i class="fas fa-shopping-cart"></i> </button>
+            </form>
+            <!-- /Add To Cart Form -->
+
+            <!-- Product Meta -->
+            <ul class="product-meta">
+              <li>
+                <span>Categories: </span>
+                <div class="product-meta-item">
+                  <a href="#">Pizza</a>
+                </div>
+              </li>
+              <li>
+                <span>Tags: </span>
+                <div class="product-meta-item">
+                  <a href="#">Pizza</a>,
+                  <a href="#">Cheese</a>,
+                  <a href="#">Cheesy Crusts</a>
+                </div>
+              </li>
+              <li>
+                <span>SKU: </span>
+                <div class="product-meta-item">
+                  <span>N/A</span>
+                </div>
+              </li>
+            </ul>
+            <!-- /Product Meta -->
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+ 
+
+ 
+  
+
+  <!-- Footer Start -->
+  <footer class="ct-footer footer-dark">
+    <!-- Top Footer -->
+    
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="container">
+        
+        <div class="footer-copyright">
+          <p> Copyright &copy; 2020 <a href="#">AndroThemes</a> All Rights Reserved. </p>
+          <a href="#" class="back-to-top">Back to top <i class="fas fa-chevron-up"></i> </a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- Footer End -->
+
+  <!-- Vendor Scripts -->
+  <script src="assets/js/plugins/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/plugins/popper.min.js"></script>
+  <script src="assets/js/plugins/waypoint.js"></script>
+  <script src="assets/js/plugins/bootstrap.min.js"></script>
+  <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/plugins/jquery.slimScroll.min.js"></script>
+  <script src="assets/js/plugins/imagesloaded.min.js"></script>
+  <script src="assets/js/plugins/jquery.steps.min.js"></script>
+  <script src="assets/js/plugins/jquery.countdown.min.js"></script>
+  <script src="assets/js/plugins/isotope.pkgd.min.js"></script>
+  <script src="assets/js/plugins/slick.min.js"></script>
+
+  <!-- Slices Scripts -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+
+<!-- Mirrored from androthemes.com/themes/html/slices/menu-item-v2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Apr 2020 05:07:02 GMT -->
+</html>

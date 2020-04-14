@@ -1,0 +1,156 @@
+{% extends "order/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="section product-single">
+    <div class="container">
+        
+      <div class="row">
+        <div class="col-md-5">
+
+          <!-- Main Thumb -->
+          <div class="product-thumb">
+            <img src="{{order.pizza.pizza_image.url}}" alt="pizza">
+          </div>
+          <!-- /Main Thumb -->
+
+        </div>
+        <div class="col-md-7">
+          <div class="product-content">
+
+            <!-- Product Title -->
+            <h2 class="title">{{order.pizza.pizza_name}}</h2>
+            <!-- /Product Title -->
+
+            <div class="favorite">
+              <i class="far fa-heart"></i>
+            </div>
+
+            
+
+            <!-- Price -->
+            <div class="price-wrapper">
+              <p class="product-price">{{order.pizza.price}}Rs x 1</p>
+            </div>
+            <!-- /Price -->
+
+            <!-- Product Short Description -->
+            <p>{{order.pizza.pizza_description}}</p>
+            <!-- /Product Short Description -->
+            <form method="POST">
+                {% csrf_token %}
+            <!-- Variations -->
+            <div class="customize-variations">
+
+             
+
+              <div class="accordion with-gap" id="variationsExample">
+
+                <div class="card">
+                  <div class="card-header" data-toggle="collapse" role="button" data-target="#doughAccordion" aria-expanded="true" aria-controls="doughAccordion">
+                    <i class="flaticon-bread-roll"></i> Mode of payment
+                  </div>
+                  <div id="doughAccordion" class="collapse show" data-parent="#variationsExample">
+                    <div class="card-body">
+                      <div class="customize-variation-wrapper">
+                        <div class="customize-variation-item" data-price="0.00">
+                          <div class="custom-control custom-radio">
+                            <input type="radio" checked id="cod" name="dough1" class="custom-control-input">
+                            <label class="custom-control-label" for="cod">Cash on Delivery</label>
+                          </div>
+                          <span>+0.00$</span>
+                        </div>
+                        
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+             
+
+                <div class="card">
+                  <div class="card-header" data-toggle="collapse" role="button" data-target="#addAccordion" aria-expanded="false" aria-controls="addAccordion">
+                    <i class="flaticon-pizza-and-cutted-slice"></i> Extra Toppings
+                  </div>
+
+                  <div id="addAccordion" class="collapse" data-parent="#variationsExample">
+                    <div class="card-body">
+                      <div class="customize-variation-wrapper">
+                          {% for top in toppings.all %}
+                          {% if top in selected_toppings %}
+                        <div class="customize-variation-item" data-price="{{top.price}}">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="top1" value={{top.id}} class="custom-control-input" id="addChicken1{{forloop.counter}}" checked>
+                            <label class="custom-control-label" for="addChicken1{{forloop.counter}}">{{top.name}}</label>
+                          </div>
+                          <span>+{{top.price}}Rs</span>
+                        </div>
+                        {%else%}
+                        <div class="customize-variation-item" data-price="{{top.price}}">
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" name="top1" value={{top.id}} class="custom-control-input" id="addChicken1{{forloop.counter}}">
+                              <label class="custom-control-label" for="addChicken1{{forloop.counter}}">{{top.name}}</label>
+                            </div>
+                            <span>+{{top.price}}Rs</span>
+                          </div>
+                        {%endif%}
+                        {% endfor%}
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                
+
+              </div>
+
+            </div>
+            <!-- /Variations -->
+
+            <!-- Add To Cart Form -->
+            <div class="atc-form" >
+              <div class="form-group">
+                <label>Quantity</label>
+                <div class="qty">
+                  <span class="qty-subtract"><i class="fas fa-minus"></i></span>
+                  <input type="text" name="qty" value="{{order.quantity}}">
+                  <span class="qty-add"><i class="fas fa-plus"></i></span>
+                </div>
+              </div>
+              <button type="submit" name="button" class="btn-custom secondary"> Proceed <i class="fas fa-shopping-cart"></i> </button>
+            </div>
+            </form>
+            <!-- /Add To Cart Form -->
+
+            <!-- Product Meta -->
+            
+            <!-- /Product Meta -->
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

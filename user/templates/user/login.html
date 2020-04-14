@@ -1,0 +1,60 @@
+{% extends "order/base.html" %}
+{% load static %}
+{% block content %}
+
+
+ <!-- Login Form Start -->
+ <div class="section">
+
+    <div class="imgs-wrapper">
+      <img src="{% static 'order/assets/img/veg/11.png'%}" alt="veg" class="d-none d-lg-block">
+      <img src="{% static 'order/assets/img/prods/3.png'%}" alt="veg" class="d-none d-lg-block">
+    </div>
+
+    <div class="container">
+      <div class="auth-wrapper">
+
+        <div class="auth-description bg-cover bg-center dark-overlay dark-overlay-2" style="background-image:url({% static 'order/assets/img/auth.jpg'%})">
+          <div class="auth-description-inner">
+            <i class="flaticon-chili"></i>
+            <h2>Hello World!</h2>
+            <p>Explore the best finger licking pizzas'  </p>
+          </div>
+        </div>
+        <div class="auth-form">
+
+          <h2>Log in</h2>
+
+          <form method="post">
+              {%csrf_token%}
+              {{ form.non_field_errors }}
+
+            <div class="form-group">
+                {{ form.username.errors }}
+              <input type="text" class="form-control form-control-light" placeholder="Username" name="username" value="" oninput="this.value = this.value.toLowerCase()">
+            </div>
+            <div class="form-group">
+                {{ form.password.errors }}
+              <input type="password" class="form-control form-control-light" placeholder="Password" name="password" value="">
+            </div>
+            <!-- <a href="">Forgot Password?</a> -->
+            <button type="submit" class="btn-custom primary">Login</button>
+
+            <div class="auth-seperator">
+              <span>OR</span>
+            </div>
+
+            
+
+            <p>Don't have an account? <a href="{% url 'signup' %}">Create One</a> </p>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Login Form End -->
+
+  
+{% endblock %}

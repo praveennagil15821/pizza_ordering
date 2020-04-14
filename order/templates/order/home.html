@@ -1,0 +1,150 @@
+{% extends "order/base.html" %}
+{% load static %}
+{% block content %}
+<!-- Customize Modal Start -->
+{% for pizza in pizzas%}
+<div class="modal fade" id="customizeModal{{forloop.counter}}" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header modal-bg" style="background-image: url({% static 'order/assets/img/blog/11.jpg' %})">
+
+        <button type="button" class="close-btn" data-dismiss="modal" aria-label="Close">
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+
+      <div class="modal-body">
+        <form method="POST">
+          {% csrf_token %}
+
+          <div class="customize-meta">
+            <input type="hidden" name="pizza_no" value={{pizza.id}}>
+            <h4 class="customize-title">{{pizza.pizza_name}}<span class="custom-primary"></span>
+            </h4>
+            <p>
+              {{pizza.pizza_description}}
+            </p>
+          </div>
+
+          <div class="customize-variations">
+
+
+
+            <div class="row">
+
+              <!-- Variation Start cod-->
+              <div class="col-lg-4 col-12">
+                <div class="customize-variation-wrapper">
+
+                  <h5>Mode Of Payment</h5>
+                  <div class="customize-variation-item" data-price="0.00">
+                    <div class="custom-control custom-radio">
+                      <input type="radio" checked id="cod{{forloop.counter}}" name="dough" class="custom-control-input">
+                      <label class="custom-control-label" for="cod{{forloop.counter}}">Cash on Delivery</label>
+                    </div>
+                    <span>+0.00 Rs</span>
+                  </div>
+
+                </div>
+              </div>
+              <!-- Variation End cod-->
+
+
+              <!-- Variation Start -->
+              <div class="col-lg-4 col-12">
+                <div class="customize-variation-wrapper">
+                  <i class="flaticon-pizza-and-cutted-slice"></i>
+                  <h5> Extra Toppings</h5>
+                  {% with forloop.counter as outer_counter %}
+                  {% for topping in toppings %}
+
+                  <div class="customize-variation-item" data-price="{{topping.price}}">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" name="toppings_val" value="{{topping.name}}"
+                        id="{{ outer_counter }}{{forloop.counter}}">
+                      <label class="custom-control-label"
+                        for="{{ outer_counter }}{{forloop.counter}}">{{topping.name}}</label>
+                    </div>
+                    <span>+{{topping.price}}Rs</span>
+                  </div>
+
+                  {% endfor %}
+                  {% endwith %}
+                </div>
+              </div>
+              <!-- Variation End -->
+
+            </div>
+          </div>
+
+          <div class="customize-controls">
+            <div class="qty">
+              <span class="qty-subtract"><i class="fas fa-minus"></i></span>
+              <input type="text" name="qty" value="1">
+              <span class="qty-add"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="customize-total" data-price={{pizza.price}}>
+              <h5>Price: <span class="final-price custom-primary">{{pizza.price}} <span>Rs x1</span> </span> </h5>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-custom btn-block">Order Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+<!-- Customize Modal End -->
+
+<!-- Menu Wrapper Start -->
+<div class="section section-padding">
+  <div class="container">
+
+    <div class="menu-container row">
+
+      <!-- Product Start -->
+      {%for pizza in pizzas%}
+      <div class="col-lg-4 col-md-6 pizzas">
+        <div class="product">
+          <a class="product-thumb" href=""> <img src="{{pizza.pizza_image.url}}" alt="menu item" /> </a>
+          <div class="product-body">
+            <div class="product-desc">
+              <h4> <a href="">{{pizza.pizza_name}}</a> </h4>
+              <p>{{pizza.pizza_description}}</p>
+              <p class="product-price">{{pizza.price}} Rs</p>
+              <div class="favorite">
+                <i class="flaticon-bread-roll"></i>
+              </div>
+            </div>
+            <form method="POST" id="orderform{{forloop.counter}}">
+                {% csrf_token %}         
+            <div class="product-controls">
+              
+              <input type="hidden" name="pizza_no" value={{pizza.id}}>
+              <input type="hidden" name="qty" value="1">
+              <a href=""  class="order-item btn-custom btn-sm shadow-none" onclick='document.forms["orderform{{forloop.counter}}"].submit(); return false;'>Order <i class="fas fa-shopping-cart"></i>
+              </a>
+             
+              <a href="#" class="btn-custom secondary btn-sm shadow-none" data-toggle="modal"
+                data-target="#customizeModal{{forloop.counter}}"> Customize <i class="fas fa-plus"></i> </a>
+
+            </div>
+             </form>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+      <!-- Product End -->
+
+    </div>
+
+  </div>
+</div>
+<!-- Menu Wrapper End -->
+
+
+
+{% endblock %}
